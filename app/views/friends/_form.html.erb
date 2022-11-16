@@ -1,0 +1,37 @@
+<%= form_with(model: friend) do |form| %>
+  <% if friend.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(friend.errors.count, "error") %> Friend not saved !Some error occured</h2>
+
+      <ul>
+        <% friend.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div >
+    <%= form.text_field :frist_name ,class:"form-control mb-4",placeholder:"First Name"%>
+  </div>
+
+  <div>
+    <%= form.text_field :last_name,class:"form-control mb-4" ,placeholder:"Last Name"%>
+  </div>
+
+  <div>
+    <%= form.text_field :email,class:"form-control mb-4",placeholder:"Email" %>
+  </div>
+
+  <div>
+    <%= form.text_field :phone ,class:"form-control mb-4",placeholder:"Phone number"%>
+  </div>
+
+  <div>
+    <%= form.text_field :twitter,class:"form-control mb-2",placeholder:"Twitter" %>
+  </div>
+
+  <div class="mt-4">
+    <%= form.submit class:"btn btn-info" %>
+  </div>
+<% end %>
