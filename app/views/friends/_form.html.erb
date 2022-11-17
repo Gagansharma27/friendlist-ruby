@@ -28,9 +28,12 @@
   </div>
 
   <div>
-    <%= form.text_field :twitter,class:"form-control mb-2",placeholder:"Twitter" %>
+    <%= form.text_field :twitter,class:"form-control mb-4",placeholder:"Twitter" %>
   </div>
-
+  <div>
+    <%= form.text_field :user_id,id: :friend_user_id, class:"form-control mb-2",value: current_user.id, type: :hidden %>
+  </div>
+  
   <div class="mt-4">
     <%= form.submit class:"btn btn-info" %>
   </div>
